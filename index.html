@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1117" />
+  <title>Realms & Ruin — Fantasy Sandbox RPG</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button id="brandButton" class="brand" type="button" aria-label="Return to title">
+        <span class="brand-mark">R&R</span>
+        <span>
+          <strong>REALMS & RUIN</strong>
+          <small>Fantasy Sandbox RPG</small>
+        </span>
+      </button>
+      <div class="top-actions">
+        <button id="saveButton" class="ghost-button hidden" type="button">Save</button>
+        <button id="menuButton" class="ghost-button hidden" type="button">Menu</button>
+      </div>
+    </header>
+
+    <main id="screenRoot" class="screen-root" aria-live="polite"></main>
+
+    <footer class="footer">
+      <span>V1 • Offline / no API required</span>
+      <span id="saveStatus">Local browser save</span>
+    </footer>
+  </div>
+
+  <template id="toastTemplate">
+    <div class="toast" role="status"></div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
