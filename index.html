@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>Realms & Ruin V4 — AI Fantasy Sandbox RPG</title>
+  <link rel="stylesheet" href="styles.css?v=4.14-tactical-economy" />
+  <style>
+    #bootStatus{max-width:620px;margin:52px auto;padding:22px;border:1px solid #2a3948;border-radius:16px;background:#121922;color:#edf1f5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    #bootStatus strong{display:block;margin-bottom:7px;font-size:1.15rem}
+    #bootStatus span{color:#9ba9b7}
+    #bootStatus .boot-error{margin-top:12px;color:#f0c7c7}
+  </style>
+  <script>
+    (function(){
+      document.documentElement.classList.add(
+        /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? "mobile-device" : "desktop-device"
+      );
+      window.addEventListener("error", function(e){
+        var box=document.getElementById("bootStatus");
+        if(box){
+          box.innerHTML="<strong>Realms & Ruin could not finish loading.</strong><span>Safari hit an error while starting the game.</span><div class='boot-error'>"+String(e.message||"Unknown error")+"</div><div class='boot-error'>Try refreshing once. If it still fails, send me a screenshot of this message.</div>";
+        }
+      });
+      window.addEventListener("unhandledrejection", function(e){
+        var box=document.getElementById("bootStatus");
+        if(box){
+          box.innerHTML="<strong>Realms & Ruin could not finish loading.</strong><span>An unexpected startup error occurred.</span><div class='boot-error'>"+String((e.reason&&e.reason.message)||e.reason||"Unknown error")+"</div>";
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button id="brandButton" class="brand" type="button" aria-label="Return to title">
+        <span class="brand-mark">R&R</span>
+        <span>
+          <strong>REALMS & RUIN</strong>
+          <small>Fantasy Sandbox RPG</small>
+        </span>
+      </button>
+      <div class="top-actions">
+        <button id="viewModeButton" class="ghost-button view-mode-button" type="button" aria-label="Change view mode">View: Auto</button>
+        <button id="saveButton" class="ghost-button hidden" type="button">Save</button>
+        <button id="menuButton" class="ghost-button hidden" type="button">Menu</button>
+      </div>
+    </header>
+
+    <main id="screenRoot" class="screen-root" aria-live="polite">
+      <div id="bootStatus">
+        <strong>Loading Realms & Ruin…</strong>
+        <span>Preparing the world simulation and mobile interface.</span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>V4.14 • Race Logic + Rich Description • Desktop + Mobile</span>
+      <span id="saveStatus">Local browser save</span>
+    </footer>
+  </div>
+
+  <template id="toastTemplate">
+    <div class="toast" role="status"></div>
+  </template>
+
+  <script defer src="script.js?v=4.14-tactical-economy"></script>
+</body>
+</html>
